@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Oswald:wght@200..700&family=Special+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        
+    }
+  
+    nav h2{
+       
+        font-size: 35px;
+        font-weight: bold;
+        color: #152540;
+        padding-left: 20px;
+    }
+    nav{
+        display: flex;
+        justify-content: space-between;
+        margin: auto;
+        width: 90%;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background-color: white;
+        padding: 20px 0;
+        box-shadow: 0 0px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+    }
+    nav ul{
+        display: flex;
+        list-style: none;
+        gap: 50px;
+        padding-right: 50px;
+        align-items: center;
+    }
+    nav ul a{
+        justify-content: space-between;
+        gap: 50px;
+        text-decoration: none;
+        color: #152540;
+        font-size: 20px;
+    }
+    nav ul a:hover{
+        text-decoration: underline;
+    }
+    nav ul button{
+        padding: 10px 40px;
+        border-radius: 50px;
+        outline: none;
+        border: none;
+        background-color: #AE5013;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    nav ul button:hover{
+        background-color: #9E4D13;
+    }
+    .nav-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+}
+
+    .heros-body{
+        display: flex;
+        margin: auto;
+        width: 90%;
+        margin-top: 50px;
+        justify-content: space-between;
+        
+        }
+        .heros-body .heros-writeup{
+            margin-top: 50px;
+        }
+    .heros-section{
+        height: 80vh;
+        
+    }
+    .heros-body .heros-writeup h1{
+        font-size: 60px;
+        color: #152540;
+        margin-bottom: 30px;
+        animation-delay: 0.2s;
+    }
+    .heros-body .heros-writeup p{
+        font-size: 25px;
+        font-weight: 200;
+        margin-bottom: 30px;
+        color: #152540;
+        animation-delay: 0.5s;
+    }
+    .heros-body .heros-writeup button{
+        padding: 20px 40px;
+        border-radius: 50px;
+        font-size: 25px;
+        border: none;
+        outline: none;
+        font-weight: bold;
+        background-color: #AE5013;
+        color: white;
+        cursor: pointer;
+        animation-delay: 0.8s;
+    }
+    .heros-body .heros-writeup button:hover{
+        background-color: #9E4D13;
+    }
+    @keyframes slideFadeUp {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInRight {
+    0% {
+        transform: translateX(50px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+.heros-writeup h1,
+.heros-writeup p,
+.heros-writeup button {
+    animation: slideFadeUp 1s ease-out forwards;
+    opacity: 0;
+}
+.heros-body img {
+    animation: fadeInRight 1.2s ease-out forwards;
+    opacity: 0;
+}
+.about {
+    margin: auto;
+    width: 90%;
+}
+
+.about h1 {
+    text-align: center;
+    font-size: 40px;
+    color: #152540;
+    padding-top: 100px;
+}
+
+
+.about-info {
+    display: flex;
+    gap: 10%;
+}
+
+.about-writeup {
+    margin-top: 30px;
+}
+
+.text {
+    font-size: 25px;
+    font-weight: 200;
+}
+
+.pack {
+    margin-top: 30px;
+}
+
+.pack p {
+    font-size: 20px;
+    font-weight: 200;
+    margin-bottom: 20px;
+}
+
+.pack i {
+    color: #AE5013;
+}
+
+
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+    
+}
+
+
+.fade-in-left.hidden {
+    transform: translateX(-50px);
+}
+
+.fade-in-right.hidden {
+    transform: translateX(50px);
+}
+
+.fade-in-up.hidden {
+    transform: translateY(30px);
+}
+
+.fade-in-left.show,
+.fade-in-right.show,
+.fade-in-up.show {
+    transform: translateX(0);
+}
+.htw{
+    margin: auto;
+    width: 90%;
+}
+.first img{
+    width: 291px;
+}
+.robo img{
+    width: 200px;
+    color: #AE5013;
+}
+.htw h1{
+    padding: 30px;
+    text-align: center;
+    font-size: 40px;
+    color: #152540;
+    padding-top: 220px;
+}
+.htw-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  padding: 100px 30px;
+  border-radius: 24px;
+}
+
+.htw-container .first {
+  flex: 1 1 400px;
+  max-width: 450px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  padding: 60px 40px;
+  text-align: center;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.htw-container .first:hover {
+  transform: translateY(-14px);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.15);
+}
+
+.htw-container .first img {
+  width: 160px;
+  height: auto;
+  margin-bottom: 35px;
+}
+
+.htw-container .first h2 {
+  font-size: 30px;
+  color: #152540;
+  margin-bottom: 25px;
+}
+
+.htw-container .first p {
+  font-size: 20px;
+  color: #444;
+  line-height: 1.8;
+}
+
+
+.hidden {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease-out;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in-up.hidden {
+  transform: translateY(40px);
+}
+
+.fade-in-up.show {
+  transform: translateY(0);
+}
+
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: #AE5013;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    padding-right: 20px;
+  }
+.heros-body .heros-writeup p{
+    font-weight: 300;
+}
+
+
+  nav {
+
+    align-items: stretch;
+    gap: 0;
+  }
+
+  .nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 0px;
+    width: 100%;
+  }
+
+
+nav.navbarr {
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 10px 20px;
+  border-radius: 20px
+}
+
+.nav-links {
+  display: none;
+  width: 100%;
+}
+
+.nav-links.show {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-links ul {
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 0;
+}
+
+}
+
+
+
+@media (max-width: 1024px) {
+  .heros-body {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 0px;
+    background-image: url(img/undraw_current-location_c8qn.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .heros-body img {
+   display: none;
+  }
+  .about h1 {
+    padding: 100px 0 20px 0;
+   
+}
+
+  nav ul {
+    gap: 20px;
+    padding-right: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .about-info {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-info img {
+    width: 70%;
+  }
+
+  .about-writeup {
+    margin-top: 30px;
+    width: 90%;
+  }
+
+  .htw-container {
+    padding: 50px 10px;
+    gap: 30px;
+  }
+
+  .htw-container .first {
+    padding: 40px 20px;
+  }
+
+  .htw-container .first img {
+    width: 120px;
+  }
+
+  nav h2 {
+    font-size: 28px;
+  }
+
+  nav ul a {
+    font-size: 18px;
+  }
+
+  .heros-writeup h1 {
+    font-size: 45px;
+  }
+
+  .heros-writeup p {
+    font-size: 20px;
+  }
+
+  .heros-writeup button {
+    font-size: 20px;
+    padding: 15px 30px;
+  }
+  .heros-section {
+    min-height: 80vh;
+}
+}
+
+@media (max-width: 600px) {
+  nav {
+    align-items: center;
+    gap: 15px;
+    text-align: center;
+  }
+
+  nav h2 {
+    padding-left: 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+  }
+
+  .heros-writeup h1 {
+    font-size: 35px;
+  }
+
+  .heros-writeup p {
+    font-size: 18px;
+  }
+
+  .about h1,
+  .htw h1 {
+    font-size: 30px;
+  }
+  .htw h1{
+    padding-top: 0;
+   
+  }
+  .text,
+  .pack p {
+    font-size: 18px;
+  }
+
+  .htw-container .first h2 {
+    font-size: 24px;
+  }
+
+  .htw-container .first p {
+    font-size: 16px;
+  }
+
+  .heros-body img {
+    width: 100%;
+  }
+  .heros-section{
+    height: 100vh;
+        
+    }
+}
+
+
+
+</style>
+<body>
+        <nav class="navbarr">
+            <div class="nav-header">
+                <h2>GoFindit</h2>
+                <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+            </div>
+              <div class="nav-links" id="navLinks">
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#how-it-works">How it Works</a></li>
+            <li><a href=""><button>Login</button></a></li>
+        </ul>
+
+            </div>
+        </nav>
+        <section class="heros-section">
+
+            <div class="heros-body">
+                <div class="heros-writeup">
+                    <h1>Easily Report or <br> Find Your Lost <br> Items</h1>
+                    <p>Discover and report misplaced items on campus easily. <br> With AI-powered matching, we help reunite lost belongings with <br> their rightful owners faster than ever.</p>
+                   <a href=""><button>Get Started</button></a> 
+                </div>
+                <img src="img/undraw_current-location_c8qn.svg" alt="an illustration" width="45%">
+            </div>
+        </section>
+        <section class="about" id="about">
+            <h1 class="hidden fade-in-up">About GoFindit</h1>
+            <div class="about-info">
+                <img src="img/undraw_smartwatch_ypa5.svg" alt="illustration_image" class="hidden fade-in-left">
+                <div class="about-writeup hidden fade-in-right">
+                    <p class="text">Every day, valuable items go missing on campus—from backpacks and keys to wallets and ID cards. GoFindit was designed to simplify the process of reuniting these items with their owners. Our platform uses AI-powered text-based matching to suggest potential matches between lost and found items. Whether you’ve lost something or found something, GoFindit provides a safe space to report and recover.</p>
+                    
+                    <div class="pack">
+                    <p class="hidden fade-in-up"><span style="margin-right: 20px;"><i class="fa-solid fa-robot"></i></span>AI-powered Suggestions</p>
+                    <p class="hidden fade-in-up"><span style="margin-right: 20px;"><i class="fa-solid fa-circle-check"></i></span>Admin-Verified listing</p>
+                    <p class="hidden fade-in-up"><span style="margin-right: 20px;"><i class="fa-solid fa-lock"></i></span>Secure user Dashboard</p>
+                    <p class="hidden fade-in-up"><span style="margin-right: 20px;"><i class="fa-solid fa-magnifying-glass"></i></span>Mobile-friendly and ease to use</p>
+                    <p class="hidden fade-in-up"><span style="margin-right: 20px;"><i class="fa-solid fa-map"></i></span>Designed for Campus Communities</p>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        <section class="htw" id="how-it-works">
+            <h1>How GoFindit Works</h1>
+            <div class="htw-container">
+                <div class="first">
+                    <img src="img/undraw_mobile-posts_kc42.svg" alt="making post">
+                    <h2>Report an Item</h2>
+                    <p>Describe the item <br> you found or lost <br> with key details</p>
+                </div>
+                <div class="first">
+                    <img src="img/undraw_coding_joxb.svg" alt="working on a laptop">
+                    <h2>Admin Review</h2>
+                    <p>Admin reviews and approves <br>items before publishing them</p>
+                </div>
+                <div class="first robo">
+                    <img src="img/Vector.svg" alt="robot head">
+                    <h2>Smart suggestions</h2>
+                    <p>Ai suggest potential matches <br> based on your input</p>
+                </div>
+                <div class="first">
+                    <img src="img/undraw_chatting_2b1g.svg" alt="chatting">
+                    <h2>Chat & Claim</h2>
+                    <p>Connect with admin to <br> confirm ownership and retrieve</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+  document.addEventListener('DOMContentLoaded', () => {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      } else {
+        entry.target.classList.remove('show'); 
+      }
+    });
+  }, {
+    threshold: 0.1,
+  });
+
+  const hiddenElements = document.querySelectorAll('.hidden');
+  hiddenElements.forEach(el => observer.observe(el));
+});
+
+function toggleMenu() {
+    const navLinks = document.getElementById("navLinks");
+    const hamburger = document.getElementById("hamburger");
+
+    navLinks.classList.toggle("show");
+
+  
+  }
+
+  // Close menu when a nav link is clicked
+  document.querySelectorAll("#navLinks a").forEach(link => {
+    link.addEventListener("click", () => {
+      document.getElementById("navLinks").classList.remove("show");
+    });
+  });
+
+
+</script>
+
+      
+</body>
+</html>
